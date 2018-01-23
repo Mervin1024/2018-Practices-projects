@@ -8,13 +8,14 @@
 
 #import "WaveLayer.h"
 
-@interface WaveLayer ()
+@interface WaveLayer () <CAAnimationDelegate>
 @property (nonatomic, strong) UIBezierPath *wavePathPre;
 @property (nonatomic, strong) UIBezierPath *wavePathStart;
 @property (nonatomic, strong) UIBezierPath *wavePathLow;
 @property (nonatomic, strong) UIBezierPath *wavePathMid;
 @property (nonatomic, strong) UIBezierPath *wavePathHigh;
 @property (nonatomic, strong) UIBezierPath *wavePathEnd;
+@property (nonatomic, strong) UIBezierPath *wavePathFill;
 @end
 
 @implementation WaveLayer
@@ -65,11 +66,19 @@
     animation5.duration = 0.18;
     animation5.beginTime = animation4.beginTime + animation4.duration;
     
+    CABasicAnimation *animation6 = [CABasicAnimation animationWithKeyPath:@"path"];
+    animation6.fromValue = (__bridge id _Nullable)(self.wavePathEnd.CGPath);
+    animation6.toValue = (__bridge id _Nullable)(self.wavePathFill.CGPath);
+    animation6.duration = 0.3;
+    animation6.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation6.beginTime = animation5.beginTime + animation5.duration;
+    
     CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
-    animationGroup.animations = @[animation1, animation2, animation3, animation4, animation5];
-    animationGroup.duration = animation5.beginTime + animation5.duration;
+    animationGroup.animations = @[animation1, animation2, animation3, animation4, animation5, animation6];
+    animationGroup.duration = animation6.beginTime + animation6.duration;
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.removedOnCompletion = NO;
+    animationGroup.delegate = self;
     
     return animationGroup;
 }
@@ -177,5 +186,27 @@
     }
     return _wavePathEnd;
 }
+
+- (UIBezierPath *)wavePathFill {
+    if (!_wavePathFill) {
+        CGRect bounds = [UIScreen mainScreen].bounds;
+        _wavePathFill = [UIBezierPath bezierPath];
+        [_wavePathFill moveToPoint:CGPointMake(0, bounds.size.height)];
+        [_wavePathFill addLineToPoint:CGPointMake(0, 0)];
+        [_wavePathFill addLineToPoint:CGPointMake(bounds.size.width, 0)];
+        [_wavePathFill addLineToPoint:CGPointMake(bounds.size.width, bounds.size.height)];
+        [_wavePathFill closePath];
+    }
+    return _wavePathFill;
+}
+
+#pragma mark - CAAnimationDelegate
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    if ([self.animationDelegate respondsToSelector:@selector(waveLayerAnimationDidCompleted:)]) {
+        [self.animationDelegate waveLayerAnimationDidCompleted:flag];
+    }
+}
+
 
 @end

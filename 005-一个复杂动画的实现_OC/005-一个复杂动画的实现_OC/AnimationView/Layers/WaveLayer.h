@@ -9,7 +9,15 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
+@protocol WaveLayerDelegate <NSObject>
+
+- (void)waveLayerAnimationDidCompleted:(BOOL)finished;
+
+@end
+
 @interface WaveLayer : CAShapeLayer
+
+@property (nonatomic, weak) id <WaveLayerDelegate> animationDelegate;
 
 - (void)startAnimation;
 

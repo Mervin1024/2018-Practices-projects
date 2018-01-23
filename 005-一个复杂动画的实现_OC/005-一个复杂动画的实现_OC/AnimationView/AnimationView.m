@@ -12,7 +12,7 @@
 #import "RectangleLayer.h"
 #import "WaveLayer.h"
 
-@interface AnimationView () <CAAnimationDelegate>
+@interface AnimationView () <CAAnimationDelegate, WaveLayerDelegate>
 @property (nonatomic, strong) CALayer *transformLayer;
 @property (nonatomic, strong) CircleLayer *circleLayer;
 @property (nonatomic, strong) TriangleLayer *triangleLayer;
@@ -22,6 +22,19 @@
 @end
 
 @implementation AnimationView
+
+- (void)clean {
+    [_circleLayer removeFromSuperlayer];
+    _circleLayer = nil;
+    [_triangleLayer removeFromSuperlayer];
+    _triangleLayer = nil;
+    [_redRectangleLayer removeFromSuperlayer];
+    _redRectangleLayer = nil;
+    [_greenRectangleLayer removeFromSuperlayer];
+    _greenRectangleLayer = nil;
+    [_waveLayer removeFromSuperlayer];
+    _waveLayer = nil;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -33,13 +46,9 @@
 
 - (void)startAnimation {
     self.backgroundColor = [UIColor whiteColor];
-//    [self.circleLayer removeFromSuperlayer];
-//    [self.triangleLayer removeFromSuperlayer];
     [_transformLayer removeFromSuperlayer];
     _transformLayer = nil;
-//    [self.redRectangleLayer removeFromSuperlayer];
-//    [self.greenRectangleLayer removeFromSuperlayer];
-//    [self.waveLayer removeFromSuperlayer];
+    [self clean];
     
     [self.layer addSublayer:self.transformLayer];
     [self startFirstAnimation];
@@ -100,14 +109,6 @@
     [self.transformLayer addSublayer:self.waveLayer];
     [self.waveLayer startAnimation];
     
-    // 0.9s 后加入放大动画
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.9 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self startSeventhAnimation];
-    });
-}
-
-- (void)startSeventhAnimation {
-    [self expand];
 }
 
 #pragma mark - Layers
@@ -151,6 +152,7 @@
 - (WaveLayer *)waveLayer {
     if (!_waveLayer) {
         _waveLayer = [WaveLayer layer];
+        _waveLayer.animationDelegate = self;
     }
     return _waveLayer;
 }
@@ -165,21 +167,16 @@
     return animation;
 }
 
-- (void)expand {
-    CGRect bounds = [UIScreen mainScreen].bounds;
-    CGFloat rectWidth = (0.866 * (90/2.0+15) + 5/2.0) * 2;
-    CGFloat newWidth = bounds.size.width / rectWidth * bounds.size.width;
-    CGFloat newHeight = bounds.size.height / rectWidth * bounds.size.height;
-    CGRect newRect = CGRectMake(-(newWidth-bounds.size.width)/2, -(newHeight-bounds.size.height)/2, newWidth, newHeight);
+#pragma mark - WaveLayerDelegate
 
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.frame = newRect;
-    } completion:^(BOOL finished) {
+- (void)waveLayerAnimationDidCompleted:(BOOL)finished {
+    if (finished) {
         self.layer.sublayers = nil;
         self.backgroundColor = [UIColor colorWithRed:64/255.0 green:224/255.0 blue:176/255.0 alpha:1];
-        if (self.animationCompleted) {
-            self.animationCompleted(finished);
-        }
-    }];
+    }
+    if (self.animationCompleted) {
+        self.animationCompleted(finished);
+    }
 }
+
 @end
