@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C93EB3520185C370045226F /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93EB3420185C370045226F /* Contents.swift */; };
+		8C93EB392018692D0045226F /* OnevcatDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93EB382018692D0045226F /* OnevcatDelay.swift */; };
+		8C93EB3B20186D630045226F /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93EB3A20186D630045226F /* TriangleLayer.swift */; };
+		8C93EB3D201875A00045226F /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93EB3C201875A00045226F /* RectangleLayer.swift */; };
+		8C93EB3F20187C950045226F /* WaveLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C93EB3E20187C950045226F /* WaveLayer.swift */; };
 		8CB003642016DA69000DCFFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB003632016DA69000DCFFD /* AppDelegate.swift */; };
 		8CB003662016DA69000DCFFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB003652016DA69000DCFFD /* ViewController.swift */; };
 		8CB003692016DA69000DCFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CB003672016DA69000DCFFD /* Main.storyboard */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C93EB3420185C370045226F /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		8C93EB382018692D0045226F /* OnevcatDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnevcatDelay.swift; sourceTree = "<group>"; };
+		8C93EB3A20186D630045226F /* TriangleLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
+		8C93EB3C201875A00045226F /* RectangleLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
+		8C93EB3E20187C950045226F /* WaveLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveLayer.swift; sourceTree = "<group>"; };
 		8CB003602016DA69000DCFFD /* 004-一个复杂动画的实现.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "004-一个复杂动画的实现.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB003632016DA69000DCFFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CB003652016DA69000DCFFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,9 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				8CB003772016DCA1000DCFFD /* Layers */,
+				8CB003752016DBBB000DCFFD /* AnimationView.swift */,
 				8CB003632016DA69000DCFFD /* AppDelegate.swift */,
 				8CB003652016DA69000DCFFD /* ViewController.swift */,
-				8CB003752016DBBB000DCFFD /* AnimationView.swift */,
+				8C93EB3420185C370045226F /* Contents.swift */,
+				8C93EB382018692D0045226F /* OnevcatDelay.swift */,
 				8CB003672016DA69000DCFFD /* Main.storyboard */,
 				8CB0036A2016DA69000DCFFD /* Assets.xcassets */,
 				8CB0036C2016DA69000DCFFD /* LaunchScreen.storyboard */,
@@ -74,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				8CB003782016DCC2000DCFFD /* CircleLayer.swift */,
+				8C93EB3A20186D630045226F /* TriangleLayer.swift */,
+				8C93EB3C201875A00045226F /* RectangleLayer.swift */,
+				8C93EB3E20187C950045226F /* WaveLayer.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -151,9 +166,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CB003762016DBBB000DCFFD /* AnimationView.swift in Sources */,
+				8C93EB3F20187C950045226F /* WaveLayer.swift in Sources */,
+				8C93EB3D201875A00045226F /* RectangleLayer.swift in Sources */,
+				8C93EB3520185C370045226F /* Contents.swift in Sources */,
 				8CB003662016DA69000DCFFD /* ViewController.swift in Sources */,
 				8CB003642016DA69000DCFFD /* AppDelegate.swift in Sources */,
+				8C93EB392018692D0045226F /* OnevcatDelay.swift in Sources */,
 				8CB003792016DCC2000DCFFD /* CircleLayer.swift in Sources */,
+				8C93EB3B20186D630045226F /* TriangleLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F692N24C9P;
 				INFOPLIST_FILE = "004-一个复杂动画的实现/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-04----------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -308,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F692N24C9P;
 				INFOPLIST_FILE = "004-一个复杂动画的实现/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-04----------";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -34,8 +34,6 @@
     _titleLabel.textColor = [UIColor whiteColor];
     [_titleLabel sizeToFit];
     _titleLabel.center = CGPointMake(self.view.center.x, self.view.center.y - 50);
-    _titleLabel.transform = CGAffineTransformScale(_titleLabel.transform, 0.25, 0.25);
-    _titleLabel.hidden = YES;
     [self.view addSubview:_titleLabel];
 
 }

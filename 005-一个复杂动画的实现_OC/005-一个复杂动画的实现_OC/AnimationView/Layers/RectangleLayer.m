@@ -55,7 +55,7 @@
         CGRect bounds = [UIScreen mainScreen].bounds;
         CGFloat width = (0.866 * (90/2.0+15) + 5/2.0) * 2;
         // 左下角
-        CGPoint lowerLeftPoint = CGPointMake(bounds.size.width/2 - 0.866 * (90/2.0+15) - 5/2.0, bounds.size.height/2 + 90/2.0/2.0 + 15/2 + 5/2.0);
+        CGPoint lowerLeftPoint = CGPointMake(bounds.size.width/2 - width/2, bounds.size.height/2 + 90/2.0/2.0 + 15/2 + 5/2.0);
         // 左上角
         CGPoint topLeftPoint = CGPointMake(lowerLeftPoint.x, lowerLeftPoint.y - width);
         // 右上角
