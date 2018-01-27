@@ -25,12 +25,11 @@
                     <navigationItem key="navigationItem" title="第一个页面" id="OG5-cz-d7l">
                         <barButtonItem key="backBarButtonItem" title="返回" id="B5f-P9-a8i"/>
                         <barButtonItem key="leftBarButtonItem" title="NULL" id="aMU-GO-K2C"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="58n-VV-H1g">
-                            <connections>
-                                <segue destination="txG-vc-rTO" kind="push" identifier="RightBarButtonItemPressed" id="dKr-72-YQZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="58n-VV-H1g"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="rightBarButton" destination="58n-VV-H1g" id="LeP-Hg-dUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +38,7 @@
         <!--第二个页面-->
         <scene sceneID="qZN-if-N2r">
             <objects>
-                <viewController id="txG-vc-rTO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" id="txG-vc-rTO" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zqk-se-Ur8"/>
                         <viewControllerLayoutGuide type="bottom" id="zBw-SG-u04"/>

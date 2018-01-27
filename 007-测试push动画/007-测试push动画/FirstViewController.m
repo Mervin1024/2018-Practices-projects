@@ -8,10 +8,12 @@
 
 #import "FirstViewController.h"
 #import "MERNavigationDelegate.h"
-#import <objc/runtime.h>
+#import "SecondViewController.h"
 
 @interface FirstViewController () <UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;
 @property (nonatomic, strong) MERNavigationDelegate *navigationDelegate;
+@property (nonatomic, strong) UIButton *customButton;
 @end
 
 @implementation FirstViewController
@@ -19,25 +21,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationDelegate = [[MERNavigationDelegate alloc] init];
-    self.navigationController.delegate = self.navigationDelegate;
+    self.customButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 24)];
+    self.customButton.backgroundColor = [UIColor yellowColor];
+    [self.customButton addTarget:self action:@selector(rightBarButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.rightBarButton.customView = self.customButton;
     
-    NSLog(@"%@",self.navigationController.navigationBar.subviews);
-    
-    unsigned int count = 0;
-    Ivar *ivarList;
-    ivarList = class_copyIvarList([self.navigationController.navigationBar class], &count);
-    for (int i = 0; i < count; i++) {
-        Ivar ivar = ivarList[i];
-        NSLog(@"方法名称：%s， 方法类型：%s  ",ivar_getName(ivar),ivar_getTypeEncoding(ivar));
-    }
-    free(ivarList);
+
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"RightBarButtonItemPressed"]) {
-        NSLog(@"动画起始点为 %@", NSStringFromCGPoint(self.view.center));
+- (void)rightBarButtonDidPressed:(UIButton *)button {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    CGPoint startingPoint = [self.customButton convertPoint:self.customButton.center toView:keyWindow];
+    self.navigationDelegate.startingPoint = startingPoint;
+    
+    SecondViewController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (MERNavigationDelegate *)navigationDelegate {
+    if (!_navigationDelegate) {
+        _navigationDelegate = [[MERNavigationDelegate alloc] init];
+        self.navigationController.delegate = _navigationDelegate;
     }
+    return _navigationDelegate;
 }
 
 @end

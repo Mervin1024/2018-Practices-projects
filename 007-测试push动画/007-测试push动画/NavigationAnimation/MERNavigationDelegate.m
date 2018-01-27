@@ -7,6 +7,7 @@
 //
 
 #import "MERNavigationDelegate.h"
+#import "MERTransitioningAnimation.h"
 
 @interface MERNavigationDelegate () 
 
@@ -29,7 +30,15 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-    return nil;
+//    if (operation == UINavigationControllerOperationPop) {
+//        return nil;
+//    }
+//    if (operation == UINavigationControllerOperationPush) {
+//        return nil;
+//    }
+    MERTransitioningAnimation *animation = [[MERTransitioningAnimation alloc] initWithOperation:operation];
+    animation.startingPoint = self.startingPoint;
+    return animation;
 }
 
 

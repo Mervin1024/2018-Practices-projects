@@ -9,15 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-//@protocol MERNavigationAnimationDataSource <NSObject>
-//
-//- (CGPoint)startingPointWhenAnimationBegin;
-//
-//@end
-
 @interface MERNavigationDelegate : NSObject <UINavigationControllerDelegate>
-
-//@property (nonatomic, weak) id<MERNavigationAnimationDataSource> dataSource;
 
 @property (nonatomic, assign) CGPoint startingPoint;
 

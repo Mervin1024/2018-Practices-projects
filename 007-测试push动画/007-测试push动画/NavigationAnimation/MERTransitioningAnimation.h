@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MERTransitioningAnimation : NSObject
+@interface MERTransitioningAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+
+@property (nonatomic, assign) CGPoint startingPoint;
+
+- (instancetype)initWithOperation:(UINavigationControllerOperation)operation;
 
 @end
