@@ -14,6 +14,8 @@
 		8C9ED378201B7AD6003C94A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C9ED376201B7AD6003C94A0 /* LaunchScreen.storyboard */; };
 		8C9ED37B201B7AD6003C94A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED37A201B7AD6003C94A0 /* main.m */; };
 		8C9ED383201CB930003C94A0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED382201CB930003C94A0 /* SecondViewController.m */; };
+		8C9ED387201CBC8D003C94A0 /* MERNavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED386201CBC8D003C94A0 /* MERNavigationDelegate.m */; };
+		8C9ED38A201CBD8A003C94A0 /* MERTransitioningAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED389201CBD8A003C94A0 /* MERTransitioningAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		8C9ED37A201B7AD6003C94A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C9ED381201CB930003C94A0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		8C9ED382201CB930003C94A0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		8C9ED385201CBC8D003C94A0 /* MERNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERNavigationDelegate.h; sourceTree = "<group>"; };
+		8C9ED386201CBC8D003C94A0 /* MERNavigationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERNavigationDelegate.m; sourceTree = "<group>"; };
+		8C9ED388201CBD8A003C94A0 /* MERTransitioningAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERTransitioningAnimation.h; sourceTree = "<group>"; };
+		8C9ED389201CBD8A003C94A0 /* MERTransitioningAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERTransitioningAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		8C9ED36A201B7AD6003C94A0 /* 007-测试push动画 */ = {
 			isa = PBXGroup;
 			children = (
+				8C9ED384201CBC70003C94A0 /* NavigationAnimation */,
 				8C9ED36B201B7AD6003C94A0 /* AppDelegate.h */,
 				8C9ED36C201B7AD6003C94A0 /* AppDelegate.m */,
 				8C9ED36E201B7AD6003C94A0 /* FirstViewController.h */,
@@ -74,6 +81,17 @@
 				8C9ED37A201B7AD6003C94A0 /* main.m */,
 			);
 			path = "007-测试push动画";
+			sourceTree = "<group>";
+		};
+		8C9ED384201CBC70003C94A0 /* NavigationAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				8C9ED385201CBC8D003C94A0 /* MERNavigationDelegate.h */,
+				8C9ED386201CBC8D003C94A0 /* MERNavigationDelegate.m */,
+				8C9ED388201CBD8A003C94A0 /* MERTransitioningAnimation.h */,
+				8C9ED389201CBD8A003C94A0 /* MERTransitioningAnimation.m */,
+			);
+			path = NavigationAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +168,8 @@
 				8C9ED383201CB930003C94A0 /* SecondViewController.m in Sources */,
 				8C9ED370201B7AD6003C94A0 /* FirstViewController.m in Sources */,
 				8C9ED37B201B7AD6003C94A0 /* main.m in Sources */,
+				8C9ED38A201CBD8A003C94A0 /* MERTransitioningAnimation.m in Sources */,
+				8C9ED387201CBC8D003C94A0 /* MERNavigationDelegate.m in Sources */,
 				8C9ED36D201B7AD6003C94A0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +307,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F692N24C9P;
 				INFOPLIST_FILE = "007-测试push动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-07---push--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F692N24C9P;
 				INFOPLIST_FILE = "007-测试push动画/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-07---push--";
 				PRODUCT_NAME = "$(TARGET_NAME)";

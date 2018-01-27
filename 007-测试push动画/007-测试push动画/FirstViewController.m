@@ -7,23 +7,37 @@
 //
 
 #import "FirstViewController.h"
+#import "MERNavigationDelegate.h"
+#import <objc/runtime.h>
 
-@interface FirstViewController ()
-
+@interface FirstViewController () <UINavigationControllerDelegate>
+@property (nonatomic, strong) MERNavigationDelegate *navigationDelegate;
 @end
 
 @implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationDelegate = [[MERNavigationDelegate alloc] init];
+    self.navigationController.delegate = self.navigationDelegate;
+    
+    NSLog(@"%@",self.navigationController.navigationBar.subviews);
+    
+    unsigned int count = 0;
+    Ivar *ivarList;
+    ivarList = class_copyIvarList([self.navigationController.navigationBar class], &count);
+    for (int i = 0; i < count; i++) {
+        Ivar ivar = ivarList[i];
+        NSLog(@"方法名称：%s， 方法类型：%s  ",ivar_getName(ivar),ivar_getTypeEncoding(ivar));
+    }
+    free(ivarList);
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"RightBarButtonItemPressed"]) {
+        NSLog(@"动画起始点为 %@", NSStringFromCGPoint(self.view.center));
+    }
 }
-
 
 @end
