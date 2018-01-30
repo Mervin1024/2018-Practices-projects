@@ -12,5 +12,6 @@
 @interface MERNavigationDelegate : NSObject <UINavigationControllerDelegate>
 
 @property (nonatomic, assign) CGPoint startingPoint;
+- (void)setPopGestureRecognizerToViewController:(UIViewController *)viewController;
 
 @end

@@ -30,11 +30,12 @@
 }
 
 - (void)rightBarButtonDidPressed:(UIButton *)button {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    CGPoint startingPoint = [self.customButton convertPoint:self.customButton.center toView:keyWindow];
+    CGPoint startingPoint = [self.customButton.superview convertPoint:self.customButton.center toView:nil];
     self.navigationDelegate.startingPoint = startingPoint;
     
     SecondViewController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    [self.navigationDelegate setPopGestureRecognizerToViewController:controller];
+    
     [self.navigationController pushViewController:controller animated:YES];
 }
 

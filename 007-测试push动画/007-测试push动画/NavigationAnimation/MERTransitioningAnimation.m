@@ -7,6 +7,8 @@
 //
 
 #import "MERTransitioningAnimation.h"
+#import "MERTransitioningMaskLayer.h"
+#import "MERTransitioningMaskView.h"
 
 @interface MERTransitioningAnimation () <CAAnimationDelegate>
 
@@ -29,52 +31,59 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 0.4;
+    return self.operation == UINavigationControllerOperationPush ?0.4:2;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    self.transitionContext = transitionContext;
+//    self.transitionContext = transitionContext;
 
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-
+    
     UIViewController *pushedVC = self.operation == UINavigationControllerOperationPush ? toVC : fromVC;
     if (self.operation == UINavigationControllerOperationPush) {
         [transitionContext.containerView addSubview:toVC.view];
     } else {
         [transitionContext.containerView insertSubview:toVC.view belowSubview:fromVC.view];
     }
-
-    CGRect smallRect = CGRectMake(self.startingPoint.x, self.startingPoint.y, 0, 0);
-    UIBezierPath *circleMaskPathSmall = [UIBezierPath bezierPathWithOvalInRect:smallRect];
+    
+    
+    CGRect smallRect = CGRectMake(self.startingPoint.x, self.startingPoint.y, 1, 1);
     CGPoint extremePoint = CGPointMake(self.startingPoint.x, CGRectGetHeight(pushedVC.view.bounds)-self.startingPoint.y);
     CGFloat radius = sqrtf(extremePoint.x * extremePoint.x + extremePoint.y * extremePoint.y);
-    UIBezierPath *circleMaskPathLarge = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(smallRect, -radius, -radius)];
+    CGRect largeRect = CGRectInset(smallRect, -radius, -radius);
+    
+    CGRect initialRect = self.operation == UINavigationControllerOperationPush ? smallRect : largeRect;
+    CGRect finalRect = self.operation == UINavigationControllerOperationPush ? largeRect : smallRect;
+    
+    
+    
+    MERTransitioningMaskView *maskView = [[MERTransitioningMaskView alloc] initWithFrame:initialRect];
+    if (self.operation == UINavigationControllerOperationPop) {
+        UIView *view = [maskView snapshotViewAfterScreenUpdates:YES];
+        pushedVC.view.maskView = view;
+    } else {
+        pushedVC.view.maskView = maskView;
+    }
 
-
-    UIBezierPath *circleMaskPathInitial = self.operation == UINavigationControllerOperationPush ? circleMaskPathSmall : circleMaskPathLarge;
-    UIBezierPath *circleMaskPathFinal = self.operation == UINavigationControllerOperationPush ? circleMaskPathLarge : circleMaskPathSmall;
-
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.path = circleMaskPathFinal.CGPath;
-    pushedVC.view.layer.mask = maskLayer;
-
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
-    animation.fromValue = (__bridge id _Nullable)(circleMaskPathInitial.CGPath);
-    animation.toValue = (__bridge id _Nullable)(circleMaskPathFinal.CGPath);
-    animation.duration = [self transitionDuration:transitionContext];
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    animation.delegate = self;
-    [maskLayer addAnimation:animation forKey:nil];
+    pushedVC.view.maskView.frame = initialRect;
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
+        pushedVC.view.maskView.frame = finalRect;
+    } completion:^(BOOL finished) {
+        pushedVC.view.maskView = nil;
+        [transitionContext completeTransition:finished];
+    }];
+    
 }
 
 #pragma mark - CAAnimationDelegate
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    [self.transitionContext completeTransition:flag];
     NSString *key = self.operation == UINavigationControllerOperationPush ? UITransitionContextToViewControllerKey : UITransitionContextFromViewControllerKey;
     UIViewController *controller = [self.transitionContext viewControllerForKey:key];
     controller.view.layer.mask = nil;
+    [self.transitionContext completeTransition:flag];
+
 }
 
 @end
