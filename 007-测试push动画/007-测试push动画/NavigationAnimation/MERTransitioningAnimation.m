@@ -9,10 +9,9 @@
 #import "MERTransitioningAnimation.h"
 #import "MERTransitioningMaskView.h"
 
-@interface MERTransitioningAnimation () <CAAnimationDelegate>
+@interface MERTransitioningAnimation ()
 
 @property (nonatomic, assign) UINavigationControllerOperation operation;
-@property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
 
 @end
 
@@ -75,16 +74,6 @@ static UIView *maskView = nil;
         [transitionContext completeTransition:finished];
     }];
     
-}
-
-#pragma mark - CAAnimationDelegate
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    NSString *key = self.operation == UINavigationControllerOperationPush ? UITransitionContextToViewControllerKey : UITransitionContextFromViewControllerKey;
-    UIViewController *controller = [self.transitionContext viewControllerForKey:key];
-    controller.view.layer.mask = nil;
-    [self.transitionContext completeTransition:flag];
-
 }
 
 @end
