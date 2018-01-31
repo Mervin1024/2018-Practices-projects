@@ -26,6 +26,7 @@
     CGContextAddPath(ctx, path);
     CGContextFillPath(ctx);
     CGContextDrawPath(ctx, kCGPathFill);
+//    self.layer.cornerRadius = rect.size.width / 2.0;
 }
 
 @end

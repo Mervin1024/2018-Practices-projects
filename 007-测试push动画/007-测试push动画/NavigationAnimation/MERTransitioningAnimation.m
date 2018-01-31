@@ -7,7 +7,6 @@
 //
 
 #import "MERTransitioningAnimation.h"
-#import "MERTransitioningMaskLayer.h"
 #import "MERTransitioningMaskView.h"
 
 @interface MERTransitioningAnimation () <CAAnimationDelegate>
@@ -16,6 +15,8 @@
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
 
 @end
+
+static UIView *maskView = nil;
 
 @implementation MERTransitioningAnimation
 
@@ -31,7 +32,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return self.operation == UINavigationControllerOperationPush ?0.4:2;
+    return 0.4;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -57,17 +58,17 @@
     CGRect finalRect = self.operation == UINavigationControllerOperationPush ? largeRect : smallRect;
     
     
-    
-    MERTransitioningMaskView *maskView = [[MERTransitioningMaskView alloc] initWithFrame:initialRect];
-    if (self.operation == UINavigationControllerOperationPop) {
-        UIView *view = [maskView snapshotViewAfterScreenUpdates:YES];
+    if (self.operation == UINavigationControllerOperationPush) {
+        MERTransitioningMaskView *view = [[MERTransitioningMaskView alloc] initWithFrame:initialRect];
         pushedVC.view.maskView = view;
+        maskView = view;
     } else {
         pushedVC.view.maskView = maskView;
     }
-
-    pushedVC.view.maskView.frame = initialRect;
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:(UIViewAnimationOptionCurveEaseOut) animations:^{
+    
+    UIViewAnimationOptions options = self.operation == UINavigationControllerOperationPush ? UIViewAnimationOptionCurveEaseOut : UIViewAnimationOptionCurveEaseIn;
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:options animations:^{
         pushedVC.view.maskView.frame = finalRect;
     } completion:^(BOOL finished) {
         pushedVC.view.maskView = nil;

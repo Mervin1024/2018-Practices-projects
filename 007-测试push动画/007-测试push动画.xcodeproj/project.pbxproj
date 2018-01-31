@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C0738F5202062DC00F9DBF9 /* MERTransitioningMaskLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0738F4202062DC00F9DBF9 /* MERTransitioningMaskLayer.m */; };
 		8C0738F82020652C00F9DBF9 /* MERTransitioningMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0738F72020652C00F9DBF9 /* MERTransitioningMaskView.m */; };
 		8C9ED36D201B7AD6003C94A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED36C201B7AD6003C94A0 /* AppDelegate.m */; };
 		8C9ED370201B7AD6003C94A0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9ED36F201B7AD6003C94A0 /* FirstViewController.m */; };
@@ -21,8 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C0738F3202062DC00F9DBF9 /* MERTransitioningMaskLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MERTransitioningMaskLayer.h; sourceTree = "<group>"; };
-		8C0738F4202062DC00F9DBF9 /* MERTransitioningMaskLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MERTransitioningMaskLayer.m; sourceTree = "<group>"; };
 		8C0738F62020652C00F9DBF9 /* MERTransitioningMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERTransitioningMaskView.h; sourceTree = "<group>"; };
 		8C0738F72020652C00F9DBF9 /* MERTransitioningMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERTransitioningMaskView.m; sourceTree = "<group>"; };
 		8C9ED368201B7AD6003C94A0 /* 007-测试push动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "007-测试push动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +93,6 @@
 				8C9ED386201CBC8D003C94A0 /* MERNavigationDelegate.m */,
 				8C9ED388201CBD8A003C94A0 /* MERTransitioningAnimation.h */,
 				8C9ED389201CBD8A003C94A0 /* MERTransitioningAnimation.m */,
-				8C0738F3202062DC00F9DBF9 /* MERTransitioningMaskLayer.h */,
-				8C0738F4202062DC00F9DBF9 /* MERTransitioningMaskLayer.m */,
 				8C0738F62020652C00F9DBF9 /* MERTransitioningMaskView.h */,
 				8C0738F72020652C00F9DBF9 /* MERTransitioningMaskView.m */,
 			);
@@ -175,7 +170,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0738F5202062DC00F9DBF9 /* MERTransitioningMaskLayer.m in Sources */,
 				8C0738F82020652C00F9DBF9 /* MERTransitioningMaskView.m in Sources */,
 				8C9ED383201CB930003C94A0 /* SecondViewController.m in Sources */,
 				8C9ED370201B7AD6003C94A0 /* FirstViewController.m in Sources */,

@@ -15,7 +15,7 @@
 @implementation SecondViewController
 
 - (void)dealloc {
-//    NSLog(@"第二个页面释放");
+    NSLog(@"第二个页面释放");
 }
 
 - (void)viewDidLoad {

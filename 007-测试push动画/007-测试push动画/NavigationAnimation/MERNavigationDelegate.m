@@ -54,7 +54,7 @@
         CGPoint velocity = [recognizer velocityInView:_popFromVC.view];
         if ((progress > 0.25 && velocity.x > 0) || progress > 0.5) {
             NSLog(@"Pop完成");
-            self.interactivePopTransition.completionSpeed = 1-self.interactivePopTransition.percentComplete;
+            self.interactivePopTransition.completionSpeed = 1;
             [self.interactivePopTransition finishInteractiveTransition];
         } else {
             NSLog(@"Pop取消");
