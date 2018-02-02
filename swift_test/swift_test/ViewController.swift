@@ -9,10 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+        print(customersInLine.count)
+        // 打印出 "5"
+        let customerProvider = { customersInLine.remove(at: 0) }
+        print(customersInLine.count)
+        // 打印出 "5"
+        print("Now serving \(customerProvider())!") // Prints "Now serving Chris!"
+        print(customersInLine.count)
+        // 打印出 "4"
+        
     }
 
     override func didReceiveMemoryWarning() {

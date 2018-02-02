@@ -35,7 +35,7 @@ class DelegateViewController: UIViewController {
         self.textFeild.center = self.view.center
         self.textFeild.becomeFirstResponder()
         self.textFeild.text = self.initTitle
-
+        
     }
     
     override func willMove(toParentViewController parent: UIViewController?) {
