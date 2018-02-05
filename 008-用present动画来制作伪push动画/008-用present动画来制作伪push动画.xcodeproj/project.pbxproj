@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C32B139202855ED00DB3743 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B138202855ED00DB3743 /* AppDelegate.m */; };
+		8C32B13C202855ED00DB3743 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B13B202855ED00DB3743 /* FirstViewController.m */; };
+		8C32B13F202855ED00DB3743 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C32B13D202855ED00DB3743 /* Main.storyboard */; };
+		8C32B141202855ED00DB3743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C32B140202855ED00DB3743 /* Assets.xcassets */; };
+		8C32B144202855ED00DB3743 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C32B142202855ED00DB3743 /* LaunchScreen.storyboard */; };
+		8C32B147202855ED00DB3743 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B146202855ED00DB3743 /* main.m */; };
+		8C32B16C2028560900DB3743 /* BFEPresentationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1602028560900DB3743 /* BFEPresentationManager.m */; };
+		8C32B16D2028560900DB3743 /* BFEPresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1612028560900DB3743 /* BFEPresentationAnimator.m */; };
+		8C32B1732028589F00DB3743 /* MERDiffusePresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1722028589F00DB3743 /* MERDiffusePresentationController.m */; };
+		8C32B176202859FC00DB3743 /* MERDiffusePresentationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B175202859FC00DB3743 /* MERDiffusePresentationManager.m */; };
+		8C32B17920285A9B00DB3743 /* MERDiffusePresentationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B17820285A9B00DB3743 /* MERDiffusePresentationAnimator.m */; };
+		8C32B17C20285C9B00DB3743 /* MERRipplesAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B17A20285C9B00DB3743 /* MERRipplesAnimatedView.m */; };
+		8C32B17F20285DF000DB3743 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B17E20285DF000DB3743 /* SecondViewController.m */; };
+		8C32B1822028688300DB3743 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1812028688300DB3743 /* UINavigationBar+BackgroundColor.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8C32B134202855ED00DB3743 /* 008-用present动画来制作伪push动画.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "008-用present动画来制作伪push动画.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C32B137202855ED00DB3743 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8C32B138202855ED00DB3743 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C32B13A202855ED00DB3743 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		8C32B13B202855ED00DB3743 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		8C32B13E202855ED00DB3743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C32B140202855ED00DB3743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C32B143202855ED00DB3743 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C32B145202855ED00DB3743 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C32B146202855ED00DB3743 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8C32B14E2028560900DB3743 /* PresentationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationHeader.h; sourceTree = "<group>"; };
+		8C32B14F2028560900DB3743 /* BFEPresentationAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFEPresentationAnimator.h; sourceTree = "<group>"; };
+		8C32B1572028560900DB3743 /* BFEPresentationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFEPresentationManager.h; sourceTree = "<group>"; };
+		8C32B1602028560900DB3743 /* BFEPresentationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEPresentationManager.m; sourceTree = "<group>"; };
+		8C32B1612028560900DB3743 /* BFEPresentationAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFEPresentationAnimator.m; sourceTree = "<group>"; };
+		8C32B1712028589F00DB3743 /* MERDiffusePresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERDiffusePresentationController.h; sourceTree = "<group>"; };
+		8C32B1722028589F00DB3743 /* MERDiffusePresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERDiffusePresentationController.m; sourceTree = "<group>"; };
+		8C32B174202859FC00DB3743 /* MERDiffusePresentationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERDiffusePresentationManager.h; sourceTree = "<group>"; };
+		8C32B175202859FC00DB3743 /* MERDiffusePresentationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERDiffusePresentationManager.m; sourceTree = "<group>"; };
+		8C32B17720285A9B00DB3743 /* MERDiffusePresentationAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERDiffusePresentationAnimator.h; sourceTree = "<group>"; };
+		8C32B17820285A9B00DB3743 /* MERDiffusePresentationAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERDiffusePresentationAnimator.m; sourceTree = "<group>"; };
+		8C32B17A20285C9B00DB3743 /* MERRipplesAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MERRipplesAnimatedView.m; sourceTree = "<group>"; };
+		8C32B17B20285C9B00DB3743 /* MERRipplesAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MERRipplesAnimatedView.h; sourceTree = "<group>"; };
+		8C32B17D20285DF000DB3743 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		8C32B17E20285DF000DB3743 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		8C32B1802028688300DB3743 /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
+		8C32B1812028688300DB3743 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C32B131202855ED00DB3743 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C32B12B202855ED00DB3743 = {
+			isa = PBXGroup;
+			children = (
+				8C32B136202855ED00DB3743 /* 008-用present动画来制作伪push动画 */,
+				8C32B135202855ED00DB3743 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C32B135202855ED00DB3743 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C32B134202855ED00DB3743 /* 008-用present动画来制作伪push动画.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C32B136202855ED00DB3743 /* 008-用present动画来制作伪push动画 */ = {
+			isa = PBXGroup;
+			children = (
+				8C32B14D2028560900DB3743 /* Presentation */,
+				8C32B137202855ED00DB3743 /* AppDelegate.h */,
+				8C32B138202855ED00DB3743 /* AppDelegate.m */,
+				8C32B13A202855ED00DB3743 /* FirstViewController.h */,
+				8C32B13B202855ED00DB3743 /* FirstViewController.m */,
+				8C32B17D20285DF000DB3743 /* SecondViewController.h */,
+				8C32B17E20285DF000DB3743 /* SecondViewController.m */,
+				8C32B1802028688300DB3743 /* UINavigationBar+BackgroundColor.h */,
+				8C32B1812028688300DB3743 /* UINavigationBar+BackgroundColor.m */,
+				8C32B13D202855ED00DB3743 /* Main.storyboard */,
+				8C32B140202855ED00DB3743 /* Assets.xcassets */,
+				8C32B142202855ED00DB3743 /* LaunchScreen.storyboard */,
+				8C32B145202855ED00DB3743 /* Info.plist */,
+				8C32B146202855ED00DB3743 /* main.m */,
+			);
+			path = "008-用present动画来制作伪push动画";
+			sourceTree = "<group>";
+		};
+		8C32B14D2028560900DB3743 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8C32B14E2028560900DB3743 /* PresentationHeader.h */,
+				8C32B14F2028560900DB3743 /* BFEPresentationAnimator.h */,
+				8C32B1612028560900DB3743 /* BFEPresentationAnimator.m */,
+				8C32B1572028560900DB3743 /* BFEPresentationManager.h */,
+				8C32B1602028560900DB3743 /* BFEPresentationManager.m */,
+				8C32B1702028586100DB3743 /* DiffusePresentation */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8C32B1702028586100DB3743 /* DiffusePresentation */ = {
+			isa = PBXGroup;
+			children = (
+				8C32B174202859FC00DB3743 /* MERDiffusePresentationManager.h */,
+				8C32B175202859FC00DB3743 /* MERDiffusePresentationManager.m */,
+				8C32B1712028589F00DB3743 /* MERDiffusePresentationController.h */,
+				8C32B1722028589F00DB3743 /* MERDiffusePresentationController.m */,
+				8C32B17720285A9B00DB3743 /* MERDiffusePresentationAnimator.h */,
+				8C32B17820285A9B00DB3743 /* MERDiffusePresentationAnimator.m */,
+				8C32B17B20285C9B00DB3743 /* MERRipplesAnimatedView.h */,
+				8C32B17A20285C9B00DB3743 /* MERRipplesAnimatedView.m */,
+			);
+			path = DiffusePresentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C32B133202855ED00DB3743 /* 008-用present动画来制作伪push动画 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C32B14A202855ED00DB3743 /* Build configuration list for PBXNativeTarget "008-用present动画来制作伪push动画" */;
+			buildPhases = (
+				8C32B130202855ED00DB3743 /* Sources */,
+				8C32B131202855ED00DB3743 /* Frameworks */,
+				8C32B132202855ED00DB3743 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "008-用present动画来制作伪push动画";
+			productName = "008-用present动画来制作伪push动画";
+			productReference = 8C32B134202855ED00DB3743 /* 008-用present动画来制作伪push动画.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C32B12C202855ED00DB3743 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "马遥";
+				TargetAttributes = {
+					8C32B133202855ED00DB3743 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8C32B12F202855ED00DB3743 /* Build configuration list for PBXProject "008-用present动画来制作伪push动画" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C32B12B202855ED00DB3743;
+			productRefGroup = 8C32B135202855ED00DB3743 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C32B133202855ED00DB3743 /* 008-用present动画来制作伪push动画 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C32B132202855ED00DB3743 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C32B144202855ED00DB3743 /* LaunchScreen.storyboard in Resources */,
+				8C32B141202855ED00DB3743 /* Assets.xcassets in Resources */,
+				8C32B13F202855ED00DB3743 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C32B130202855ED00DB3743 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C32B17C20285C9B00DB3743 /* MERRipplesAnimatedView.m in Sources */,
+				8C32B17920285A9B00DB3743 /* MERDiffusePresentationAnimator.m in Sources */,
+				8C32B13C202855ED00DB3743 /* FirstViewController.m in Sources */,
+				8C32B176202859FC00DB3743 /* MERDiffusePresentationManager.m in Sources */,
+				8C32B147202855ED00DB3743 /* main.m in Sources */,
+				8C32B16D2028560900DB3743 /* BFEPresentationAnimator.m in Sources */,
+				8C32B17F20285DF000DB3743 /* SecondViewController.m in Sources */,
+				8C32B1822028688300DB3743 /* UINavigationBar+BackgroundColor.m in Sources */,
+				8C32B139202855ED00DB3743 /* AppDelegate.m in Sources */,
+				8C32B16C2028560900DB3743 /* BFEPresentationManager.m in Sources */,
+				8C32B1732028589F00DB3743 /* MERDiffusePresentationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C32B13D202855ED00DB3743 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C32B13E202855ED00DB3743 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C32B142202855ED00DB3743 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C32B143202855ED00DB3743 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C32B148202855ED00DB3743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8C32B149202855ED00DB3743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C32B14B202855ED00DB3743 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F692N24C9P;
+				INFOPLIST_FILE = "008-用present动画来制作伪push动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-08--present------push--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C32B14C202855ED00DB3743 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F692N24C9P;
+				INFOPLIST_FILE = "008-用present动画来制作伪push动画/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mervin1024.practice.-08--present------push--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C32B12F202855ED00DB3743 /* Build configuration list for PBXProject "008-用present动画来制作伪push动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C32B148202855ED00DB3743 /* Debug */,
+				8C32B149202855ED00DB3743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C32B14A202855ED00DB3743 /* Build configuration list for PBXNativeTarget "008-用present动画来制作伪push动画" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C32B14B202855ED00DB3743 /* Debug */,
+				8C32B14C202855ED00DB3743 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C32B12C202855ED00DB3743 /* Project object */;
+}
