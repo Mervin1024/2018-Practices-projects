@@ -43,10 +43,12 @@ static UIView *maskView = nil;
     }
     
     CGRect smallRect = CGRectMake(self.startingPoint.x, self.startingPoint.y, 1, 1);
-    CGPoint extremePoint = CGPointMake(self.startingPoint.x, CGRectGetHeight(pushedVC.view.bounds)-self.startingPoint.y);
+    CGFloat extremeX = MAX(self.startingPoint.x, CGRectGetWidth(pushedVC.view.bounds)-self.startingPoint.x);
+    CGFloat extremeY = MAX(self.startingPoint.y, CGRectGetHeight(pushedVC.view.bounds)-self.startingPoint.y);
+    CGPoint extremePoint = CGPointMake(extremeX, extremeY);
     CGFloat radius = sqrtf(extremePoint.x * extremePoint.x + extremePoint.y * extremePoint.y);
     CGRect largeRect = CGRectInset(smallRect, -radius, -radius);
-    
+
     CGRect initialRect = self.isPresentation ? smallRect : largeRect;
     CGRect finalRect = self.isPresentation ? largeRect : smallRect;
     
