@@ -41,9 +41,6 @@ static UIView *maskView = nil;
     if (self.isPresentation) {
         [transitionContext.containerView addSubview:toVC.view];
     }
-//    else {
-//        [transitionContext.containerView insertSubview:toVC.view belowSubview:fromVC.view];
-//    }
     
     CGRect smallRect = CGRectMake(self.startingPoint.x, self.startingPoint.y, 1, 1);
     CGPoint extremePoint = CGPointMake(self.startingPoint.x, CGRectGetHeight(pushedVC.view.bounds)-self.startingPoint.y);
@@ -62,7 +59,7 @@ static UIView *maskView = nil;
         pushedVC.view.maskView = maskView;
     }
     
-    UIViewAnimationOptions options = self.isPresentation ? UIViewAnimationOptionCurveEaseOut : UIViewAnimationOptionCurveEaseIn;
+    UIViewAnimationOptions options = self.isPresentation ? UIViewAnimationOptionCurveEaseInOut : UIViewAnimationOptionCurveEaseInOut;
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:options animations:^{
         pushedVC.view.maskView.frame = finalRect;

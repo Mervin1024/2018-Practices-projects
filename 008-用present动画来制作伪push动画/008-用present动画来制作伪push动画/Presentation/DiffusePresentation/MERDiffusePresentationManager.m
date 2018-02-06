@@ -9,15 +9,18 @@
 #import "MERDiffusePresentationManager.h"
 #import "MERDiffusePresentationController.h"
 #import "MERDiffusePresentationAnimator.h"
+#import "MERDiffusePresentationInteractive.h"
 
 @implementation MERDiffusePresentationManager {
     CGPoint _startingPoint;
+    MERDiffusePresentationInteractive *_interactive;
 }
 
 - (instancetype)initWithStartingPoint:(CGPoint)startingPoint {
     self = [super init];
     if (self) {
         _startingPoint = startingPoint;
+        _interactive = [[MERDiffusePresentationInteractive alloc] init];
     }
     return self;
 }
@@ -28,6 +31,8 @@
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    
+    [_interactive setDismissGestureRecognizerToViewController:presented];
     MERDiffusePresentationAnimator *animator = [[MERDiffusePresentationAnimator alloc] initWhenPresentation:YES startingPoint:_startingPoint];
     return animator;
 }
@@ -35,6 +40,10 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     MERDiffusePresentationAnimator *animator = [[MERDiffusePresentationAnimator alloc] initWhenPresentation:NO startingPoint:_startingPoint];
     return animator;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+    return _interactive.isInteracting ? _interactive : nil;
 }
 
 @end

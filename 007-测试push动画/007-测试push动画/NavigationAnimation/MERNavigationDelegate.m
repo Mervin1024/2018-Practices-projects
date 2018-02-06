@@ -50,16 +50,20 @@
     }
     else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         // Finish or cancel the interactive transition
-        
-        CGPoint velocity = [recognizer velocityInView:_popFromVC.view];
-        if ((progress > 0.25 && velocity.x > 0) || progress > 0.5) {
-            NSLog(@"Pop完成");
-            self.interactivePopTransition.completionSpeed = 1;
+        if (@available(iOS 11.0,*)) {
+            self.interactivePopTransition.completionSpeed = 1 - progress;
             [self.interactivePopTransition finishInteractiveTransition];
         } else {
-            NSLog(@"Pop取消");
-            [self.interactivePopTransition updateInteractiveTransition:0.f];
-            [self.interactivePopTransition cancelInteractiveTransition];
+            CGPoint velocity = [recognizer velocityInView:_popFromVC.view];
+            if ((progress > 0.25 && velocity.x > 0) || progress > 0.5) {
+                NSLog(@"Pop完成");
+                self.interactivePopTransition.completionSpeed = 1 - progress;
+                [self.interactivePopTransition finishInteractiveTransition];
+            } else {
+                NSLog(@"Pop取消");
+                [self.interactivePopTransition updateInteractiveTransition:0.f];
+                [self.interactivePopTransition cancelInteractiveTransition];
+            }
         }
         self.interactivePopTransition = nil;
     }

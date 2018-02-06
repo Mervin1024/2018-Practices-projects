@@ -21,6 +21,8 @@
 		8C32B17C20285C9B00DB3743 /* MERRipplesAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B17A20285C9B00DB3743 /* MERRipplesAnimatedView.m */; };
 		8C32B17F20285DF000DB3743 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B17E20285DF000DB3743 /* SecondViewController.m */; };
 		8C32B1822028688300DB3743 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1812028688300DB3743 /* UINavigationBar+BackgroundColor.m */; };
+		8C32B1852029920F00DB3743 /* BFEPresentationInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1842029920F00DB3743 /* BFEPresentationInteractive.m */; };
+		8C32B1882029928300DB3743 /* MERDiffusePresentationInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C32B1872029928300DB3743 /* MERDiffusePresentationInteractive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,10 @@
 		8C32B17E20285DF000DB3743 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		8C32B1802028688300DB3743 /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
 		8C32B1812028688300DB3743 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
+		8C32B1832029920F00DB3743 /* BFEPresentationInteractive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BFEPresentationInteractive.h; sourceTree = "<group>"; };
+		8C32B1842029920F00DB3743 /* BFEPresentationInteractive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BFEPresentationInteractive.m; sourceTree = "<group>"; };
+		8C32B1862029928300DB3743 /* MERDiffusePresentationInteractive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MERDiffusePresentationInteractive.h; sourceTree = "<group>"; };
+		8C32B1872029928300DB3743 /* MERDiffusePresentationInteractive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MERDiffusePresentationInteractive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 				8C32B1612028560900DB3743 /* BFEPresentationAnimator.m */,
 				8C32B1572028560900DB3743 /* BFEPresentationManager.h */,
 				8C32B1602028560900DB3743 /* BFEPresentationManager.m */,
+				8C32B1832029920F00DB3743 /* BFEPresentationInteractive.h */,
+				8C32B1842029920F00DB3743 /* BFEPresentationInteractive.m */,
 				8C32B1702028586100DB3743 /* DiffusePresentation */,
 			);
 			path = Presentation;
@@ -125,6 +133,8 @@
 				8C32B17820285A9B00DB3743 /* MERDiffusePresentationAnimator.m */,
 				8C32B17B20285C9B00DB3743 /* MERRipplesAnimatedView.h */,
 				8C32B17A20285C9B00DB3743 /* MERRipplesAnimatedView.m */,
+				8C32B1862029928300DB3743 /* MERDiffusePresentationInteractive.h */,
+				8C32B1872029928300DB3743 /* MERDiffusePresentationInteractive.m */,
 			);
 			path = DiffusePresentation;
 			sourceTree = "<group>";
@@ -202,6 +212,7 @@
 			files = (
 				8C32B17C20285C9B00DB3743 /* MERRipplesAnimatedView.m in Sources */,
 				8C32B17920285A9B00DB3743 /* MERDiffusePresentationAnimator.m in Sources */,
+				8C32B1882029928300DB3743 /* MERDiffusePresentationInteractive.m in Sources */,
 				8C32B13C202855ED00DB3743 /* FirstViewController.m in Sources */,
 				8C32B176202859FC00DB3743 /* MERDiffusePresentationManager.m in Sources */,
 				8C32B147202855ED00DB3743 /* main.m in Sources */,
@@ -210,6 +221,7 @@
 				8C32B1822028688300DB3743 /* UINavigationBar+BackgroundColor.m in Sources */,
 				8C32B139202855ED00DB3743 /* AppDelegate.m in Sources */,
 				8C32B16C2028560900DB3743 /* BFEPresentationManager.m in Sources */,
+				8C32B1852029920F00DB3743 /* BFEPresentationInteractive.m in Sources */,
 				8C32B1732028589F00DB3743 /* MERDiffusePresentationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
