@@ -27,6 +27,7 @@
     self.rightBarButton.customView = self.customButton;
     
 
+    
 }
 
 - (void)rightBarButtonDidPressed:(UIButton *)button {

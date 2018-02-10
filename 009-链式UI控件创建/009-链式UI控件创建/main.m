@@ -1,8 +1,8 @@
 //
 //  main.m
-//  007-测试push动画
+//  009-链式UI控件创建
 //
-//  Created by 马遥 on 2018/1/26.
+//  Created by 马遥 on 2018/2/11.
 //  Copyright © 2018年 马遥. All rights reserved.
 //
 
@@ -14,5 +14,3 @@ int main(int argc, char * argv[]) {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
-
-
